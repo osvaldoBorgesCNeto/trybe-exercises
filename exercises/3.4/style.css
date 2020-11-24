@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
 }
@@ -5,11 +6,16 @@ body{
     background-color: aqua;
 }
 .title{
-    margin: 50px;
+    margin-bottom: 50px;
     text-align: center;
     font-size: 60px;
-    color: deepskyblue;
-    background-image: none;
+    colo deepskyblue;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-image: url("image/header.jpg");
+    background-size: cover;
+    background-position: 50% 50%;
+    height: 400px;
 }
 header nav{
     background-color: darksalmon;
@@ -65,8 +71,11 @@ p {
 }
 footer{
     background-color: darksalmon;
-    background-color: ;
     clear: both;
     padding-top: 5%;
     text-align: center;
+    border-top: dashed gray;
 }
+@font-face {
+    font-family: fontName;
+    src: url("../fonts/")
