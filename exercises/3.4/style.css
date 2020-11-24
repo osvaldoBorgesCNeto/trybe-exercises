@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+}
+body{
+    background-color: aqua;
+}
+.title{
+    margin: 50px;
+    text-align: center;
+    font-size: 60px;
+    color: deepskyblue;
+    background-image: none;
+}
+header nav{
+    background-color: darksalmon;
+    height: max-content;
+    text-align: end;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-top: dashed gray;
+    border-bottom: dashed gray; 
+}
+header nav ul li{
+    border: ridge gray;
+    display: inline;
+    background-color: gray;
+}
+header nav ul li a {
+    text-decoration: none;
+    color: black;
+}
+aside{
+    float: right;
+    border: 5px solid #ffabd5;
+    text-decoration: none;
+    line-height: 25px;
+}
+#scientific{
+    background-color: #ffabd5;
+    text-align: center;
+    border-bottom:  2px solid #ffabd5;
+    margin: 0px;
+    color: blue;
+}
+.sub-title{
+    color: dimgrey;
+    text-align: center;
+    margin-top: 1em;
+    font-size: 32px;
+    font-weight: 300;
+}
+.title_section{
+    color: green;
+    text-decoration: underline;
+    margin-bottom: 1em;
+    margin-top: 0.25em;
+    margin-left: 2%;
+}
+p {
+    font-family: monospace;
+    margin-left: 2.5%;
+}
+#list_biblio li{
+    margin-top: 5px;
+}
+footer{
+    background-color: darksalmon;
+    background-color: ;
+    clear: both;
+    padding-top: 5%;
+    text-align: center;
+}
