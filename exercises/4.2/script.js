@@ -128,3 +128,19 @@ for (let indexI = 1; indexI < numbers.length; indexI += 1){
 }
 
 console.log(numbers);
+
+// BONUS 03
+console.log('BONUS 03');
+let numbersBonus = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27]
+let indexJV = 0;
+let bonus03 = [];
+
+for (let indexI = 0; indexI < numbersBonus.length; indexI += 1){
+    if (numbersBonus[indexI + 1]) {
+        bonus03.push(numbersBonus[indexI] * numbersBonus[indexI + 1])
+    }else {
+        bonus03.push(numbersBonus[indexI] * 2);
+    }
+}
+
+console.log(bonus03);
