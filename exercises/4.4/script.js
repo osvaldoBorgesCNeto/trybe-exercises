@@ -69,7 +69,7 @@ console.log(maxNumber(22, 11));
 // 4
 console.log('Exercicio 04');
 
-function numberValor(valor){
+function numberValor(valor) {
     if (valor > 0) {
         return 'positivo';
     } else if (valor < 0) {
@@ -84,7 +84,7 @@ console.log(numberValor(50));
 // 5
 console.log('Exercicio 05');
 
-function anguloTriangulo(ang1, ang2, ang3){
+function anguloTriangulo(ang1, ang2, ang3) {
     let angT = ang1 + ang2 + ang3;
     switch  (angT) {
         case 180:
@@ -100,7 +100,7 @@ console.log(anguloTriangulo(60, 60, 60));
 // 10
 console.log('Exercicio 10')
 
-function vendas(imposto, custo, venda, vendaTotal){
+function vendas(imposto, custo, venda, vendaTotal) {
     let custoTotal = custo * imposto;
     let lucro = venda - custoTotal;
     let lucroF = lucro * vendaTotal;
@@ -116,7 +116,7 @@ console.log(vendas(1.2, 200, 300, 1000));
 // 11
 console.log('Exercicio 11')
 
-function salario(salarioBruto){
+function salario(salarioBruto) {
     let salarioINSS = null;
     let salarioIR = null;
     let salarioLiquido = null;
@@ -158,3 +158,53 @@ function salario(salarioBruto){
 }
 
 console.log(salario(3000));
+
+// Apos a aula ao VIVO
+console.log('Objetos e For/in');
+console.log('Exercicio 01');
+
+let info = {
+    personagem: 'Margarida',
+    origem: 'Pato Donald',
+    nota: 'Namorada do personagem principal nos quadrinhos do Pato Donald',
+}
+
+console.log('Bem-Vinda, ' + info.personagem);
+
+console.log('Exercicio 02');
+
+info.recorrente = 'Sim';
+
+console.log(info);
+
+console.log('Exercicio 03');
+
+for (let key in info) {
+    console.log(key);
+}
+
+console.log('Exercicio 04');
+
+for (let key in info) {
+    console.log(info[key]);
+}
+
+console.log('Exercicio 05');
+
+let infoTioPatinhas = {
+    personagem: 'Tio Patinhas',
+    origem: "Christmas on Bear Mountain, Dell's Four Color Comics #178",
+    nota: 'O ultimo MacPatinhas',
+    recorrente: 'Sim',
+}
+
+for (let key in info, infoTioPatinhas) {
+    if (info[key] === infoTioPatinhas[key]){
+        console.log('Ambos recorrentes');
+    }else {
+        console.log(info[key] + ' e ' + infoTioPatinhas[key]);
+    }
+    
+}
+
+
