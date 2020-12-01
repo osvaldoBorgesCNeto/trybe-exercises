@@ -207,4 +207,150 @@ for (let key in info, infoTioPatinhas) {
     
 }
 
+console.log('Funcoes')
+console.log('Exercicio 01')
 
+function verificaPalindromo(string) {
+    let palavra = '';
+
+    for (let contador = string.length - 1; contador >= 0; contador -=1) {
+        palavra += string[contador];
+    }
+    if (palavra === string) {
+        return true;
+    }else {
+        return false;
+    }
+}
+console.log(verificaPalindromo('arara'));
+
+console.log('Exercicio 02');
+
+let valoresMaior = [2, 3, 6, 7, 10, 1];
+
+function maiorIndex(array) {
+    let indiceMaior = 0;
+    for (let index = 0; index < array.length; index += 1) {
+        if (indiceMaior < array[index]) {
+            indiceMaior = index;
+        }else if (indiceMaior === array[index]) {
+            indiceMaior = index;
+        }
+    }
+    return indiceMaior;
+}
+console.log(maiorIndex(valoresMaior));
+
+console.log('Exercicio 03')
+
+let valoresMenor = [2, 4, 6, 7, 10, 0, -3];
+
+function menorIndex(array) {
+    let indiceMaior = 0;
+    for (let index = 0; index < array.length; index += 1) {
+        if (indiceMaior > array[index]) {
+            indiceMaior = index;
+        }else if (indiceMaior === array[index]) {
+            indiceMaior = index;
+        }
+    }
+    return indiceMaior;
+}
+console.log(menorIndex(valoresMenor));
+
+console.log('Exercicio 04');
+
+let arrayNomes = ['José', 'Lucas', 'Nádia', 'Fernanda', 'Cairo', 'Joana'];
+
+function maiorLetra(array) {
+    let maiorNome = 0;
+    let nome = 0
+
+    for (let contador = 0; contador <  array.length; contador += 1) {
+        for (let contadorLetras = 0; contadorLetras < array[contador].length; contadorLetras += 1) {
+            if (array[contador].length > nome) {
+                maiorNome = contador;
+                nome = array[contador].length;
+            }
+        }
+    }
+    return array[maiorNome];
+}
+console.log(maiorLetra(arrayNomes));
+
+console.log('Exercicio 05');
+
+let arrayRepete = [2, 3, 2, 5, 8, 2, 3];
+
+function maiorRepete(array) {
+
+let soma = 0;
+let somaMaior = 0;
+let repete = 0;
+
+    for (let index = 0; index < array.length; index += 1) {
+        for (let contador = 0; contador < array.length; contador += 1) {
+          if (array[index] === array[contador])
+            soma += 1;              
+        }
+        if (soma > somaMaior) {
+            somaMaior = soma;
+            repete = index;
+        }
+        soma = 0;
+    }
+    return array[repete];
+}
+console.log(maiorRepete(arrayRepete));
+
+console.log('Exercicio 06');
+
+function somatorio(numero) {
+
+let soma = 0;
+
+     for (let index = 1; index <= numero; index += 1) {
+        soma += index;
+     }
+     return soma;
+}
+console.log(somatorio(5));
+
+console.log('Exercicio 07');
+
+function verificarEnding(word, ending) {
+
+let wordEnding = 0;
+let criandoWord = '';
+let criandoEnding = '';
+let menorPalavra = 0;
+let maiorPalavra = 0;
+
+
+    for (let contador = 0; contador < ending.length; contador += 1) {
+        wordEnding += 1;
+        menorPalavra += 1;
+    }
+
+    for (let contador = 0; contador < word.length; contador += 1) {
+        maiorPalavra += 1;
+    }
+
+    for (let index2 = (ending.length - 1); index2 >= 0; index2 -= 1) {
+        criandoEnding += ending[index2];
+    }
+
+    if (maiorPalavra > menorPalavra) {
+        for (let index = (word.length - 1); index > ((word.length - 1) - wordEnding); index -= 1) {
+            criandoWord += word[index];
+            }
+            if (criandoWord === criandoEnding) {
+                return true;
+            }else {
+                return false;
+            }
+    }else {
+        return 'Segunda palavra maior que a Primeira';
+    }
+}
+console.log(verificarEnding('osvaldo', 'aldo'));
