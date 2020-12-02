@@ -19,3 +19,17 @@ function changeSquareColorToWhite() {
 changeSquareColorToWhite();
 
 // Exercicio 04
+function correctText() {
+    let text = document.getElementsByTagName('h1');
+    text[0].innerText = 'Exercício 5.1 - JavaScript';
+}
+correctText();
+
+// Exercicio 05
+function changeTextForUpperCase() {
+    let paragraphs = document.getElementsByTagName('p');
+    for (let contador = 0; contador < document.getElementsByTagName('p').length; contador += 1) {
+        paragraphs[contador].innerText = paragraphs[contador].innerText.toUpperCase();
+    }
+}
+changeTextForUpperCase();
