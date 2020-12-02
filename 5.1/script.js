@@ -33,3 +33,12 @@ function changeTextForUpperCase() {
     }
 }
 changeTextForUpperCase();
+
+// Exercicio 06
+function seeConsole() {
+    let paragraphs = document.getElementsByTagName('p');
+    for (let contador = 0; contador < document.getElementsByTagName('p').length; contador += 1) {
+        console.log(paragraphs[contador]);
+    }
+}
+seeConsole();
