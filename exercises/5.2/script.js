@@ -47,3 +47,26 @@ function terceiroFilhoPeloPai() {
     elementoOndeVoceEsta().parentNode.childNodes[5];
 }
 terceiroFilhoPeloPai();
+
+// Parte 02
+// Exercicio 01
+
+let createSibling = document.createElement('div');
+elementoOndeVoceEsta().parentNode.appendChild(createSibling);
+elementoOndeVoceEsta().parentNode.lastChild.innerText = 'Irmao do OndeVoceEsta';
+
+// Exercicio 02
+
+let createChild = document.createElement('div');
+elementoOndeVoceEsta().appendChild(createChild);
+elementoOndeVoceEsta().lastChild.innerText = 'Filho do Filho';
+
+// Exercicio 03
+
+let createChildChild = document.createElement('div');
+elementoOndeVoceEsta().firstElementChild.appendChild(createChildChild);
+elementoOndeVoceEsta().firstElementChild.firstElementChild.innerText = "Filho do FilhoFilho";
+
+// Exercicio 04
+
+elementoOndeVoceEsta().firstElementChild.firstElementChild.parentNode.parentNode.parentNode.childNodes[5];
