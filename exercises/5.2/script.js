@@ -70,3 +70,15 @@ elementoOndeVoceEsta().firstElementChild.firstElementChild.innerText = "Filho do
 // Exercicio 04
 
 elementoOndeVoceEsta().firstElementChild.firstElementChild.parentNode.parentNode.parentNode.childNodes[5];
+
+
+// Parte 03
+// Exercicio 01
+
+let element = document.querySelectorAll('div');
+
+for (let contador = 0; contador < element.length; contador += 1) {
+    let remove = element[contador];
+    console.log(remove);
+    
+}
