@@ -98,8 +98,11 @@
         let listNumber = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'];
         for (let index = 0; index < listNumber.length; index += 1) {
             let number = listNumber[index];
+
             const list = document.createElement('li');
             list.innerText = number;
+            list.className = 'number-list';
+
             document.querySelector('.right-content').appendChild(list);
         }
 
@@ -107,6 +110,35 @@
         for (let index = 0; index < 3; index += 1) {
             const elementH3 = document.createElement('h3');
             document.querySelector('.main-content').appendChild(elementH3);
+        }
+
+        // Parte 02
+        // Exercicio 01
+        elementH1.className = 'title';
+
+        // Exercicio 02
+        for (let index = 0; index < 3; index += 1) {
+            document.querySelectorAll('h3')[index].className = 'description';
+        }
+
+        // Exercicio 03
+        document.querySelector('.main-content').removeChild(divLeft);
+
+        // Exercicio 04
+        divRight.style.margin = 'auto';
+
+        // Exercicio 05
+        elementDivFilho.style.backgroundColor = 'green';
+
+        // Exercicio 06
+        let list = document.querySelectorAll('.number-list');
+
+        for (let index = 0; index < list.length; index += 1) {
+            let element = list[index];
+
+          if (element.innerText.includes('nine') || element.innerText.includes('ten')) {
+            document.querySelector('.right-content').removeChild(element);
+          }
         }
     </script>
   </body>
