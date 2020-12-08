@@ -60,8 +60,10 @@ function createDaysOfTheWeek() {
     for (let index = 0; index < holidayB.length; index += 1) {
       if (holidayB[index].style.backgroundColor !== 'green') {
         holidayB[index].style.backgroundColor = 'green';
+        holidayB[index].style.color = 'white';
       } else {
         holidayB[index].style.backgroundColor = 'rgb(238, 238, 238)';
+        holidayB[index].style.color = 'rgb(119, 119, 119)';
       }
     }
   }
@@ -93,14 +95,15 @@ function createDaysOfTheWeek() {
     }
   }
   // Exercicio 06
-  function zoomDaysLoop(){
+  function DaysLoop(){
     let zoomDays = document.querySelectorAll('.day');
     for (let index = 0; index < zoomDays.length; index += 1){
       zoomDays[index].addEventListener('mouseover', zoom);
       zoomDays[index].addEventListener('mouseleave', zoomLeave);
+      zoomDays[index].addEventListener('click', colorDaysChange);
     }
   }
-  zoomDaysLoop();
+  DaysLoop();
 
   function zoom(origin) {
     origin.target.style.fontSize = '25px';
@@ -122,6 +125,22 @@ function createDaysOfTheWeek() {
     finalDiv.appendChild(textSpan);
   }
 
+  // Exercicio 09
+  function taskDivLoop() {
+    const divTasks = document.querySelectorAll('.task');
+    for (let index = 0; index < divTasks.length; index += 1) {
+      divTasks[index].addEventListener('click', selecteTask)
+    }
+  }
+
+  function selecteTask(origin) {
+    if (origin.target.className != 'task selected') {
+      origin.target.className = 'task selected';
+    } else {
+      origin.target.className = 'task';
+    }
+  }
+
   // Exercicio 08
   // Referencia do gerador de cor Random:
   // https://stackoverflow.com/questions/1484506/random-color-generator
@@ -136,11 +155,24 @@ function createDaysOfTheWeek() {
 
   buttonAddTasks.addEventListener('click', changeColorTask);
 
-  function changeColorTask(cor) {
+  function changeColorTask() {
     const colorDiv = document.createElement('div');
     colorDiv.className = 'task';
     colorDiv.style.backgroundColor = getRandomColor();
     const finalDiv = document.querySelector('.my-tasks');
     finalDiv.appendChild(colorDiv);
+    taskDivLoop();
 
   }
+
+  // Exercicio 10
+  function colorDaysChange(origin) {
+    const taskColor = document.querySelector('.task.selected')
+    if (origin.target.style.color == taskColor.style.backgroundColor) {
+      origin.target.style.color = taskColor.style.backgroundColor;
+      console.log(myColor);
+    } else {
+      origin.target.style.color = rgb(119, 119, 119);
+    }
+  }
+  
