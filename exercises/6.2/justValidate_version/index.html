@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/bulma.min.css">
+  <title>Formulario</title>
+</head>
+<body>
+  <header class="my-4">
+    <h1 class="title has-text-centered has-text-primary-dark">Formulario de Curriculo</h1>
+  </header>
+  <hr>
+  <main>
+    <form class="mx-3 js-form form" action="#" method="GET">
+      <div class="field">
+        <div class="control form-group col-md-6">
+          <label class="label" for="input-name">Nome*</label>
+          <input class="input is-primary" placeholder="Digite seu nome" type="text" data-validate-field="name" name="name" id="input-name" maxlength="40" required>
+        </div>
+        <div class="control email">
+          <label class="label" for="input-email">E-mail*</label>
+          <input class="input is-primary" placeholder="Digite seu email" type="text" data-validate-field="email" name="email" id="input-email" maxlength="50" required>
+        </div>
+        <div class="control cpf">
+          <label class="label" for="input-cpf">CPF*</label>
+          <input class="input is-primary" placeholder="Digite seu CPF" type="text" data-validate-field="cpf" name="cpf" id="input-cpf" maxlength="11" required>
+        </div>
+        <div class="control address">
+          <label class="label" for="input-address">Endereço*</label>
+          <input class="input is-primary" placeholder="Digite seu endereço" type="text" data-validate-field="address" name="end" id="input-address" maxlength="200" required>
+        </div>
+        <div class="control city">
+          <label class="label" for="input-city">Cidade*</label>
+          <input class="input is-primary" placeholder="Digite sua cidade" type="text" data-validate-field="city" name="cidade" id="input-city" maxlength="28" required>
+        </div>
+        <div class="control state">
+          <label class="label" for="input-stage">Estado*</label>
+          <div class="select">
+              <select data-validate-field="state" name="stage" id="input-state" value="" required></select>
+          </div>
+        </div>
+        <div class="control type">
+          <label class="label">Tipo*</label>
+          <label class="radio" for="casa">
+            <input type="radio" data-validate-field="type" name="tipo" id="casa" value="casa" required>
+            Casa
+          </label>
+          <label class="radio" for="ap">
+            <input type="radio" data-validate-field="type" name="tipo" id="ap" value="ap" required>
+            Apartamento
+          </label>
+        </div>
+        <div class="control job">
+            <label class="label" for="input-resume">Resumo do ultimo emprego</label>
+            <textarea class="textarea" name="resumo" id="input-resume" maxlength="1000" required></textarea>
+        </div>
+        <div class="control cargo">
+          <label class="label" for="input-cargo">Cargo*</label>
+          <input class="input is-primary" data-validate-field="office" type="text" name="cargo" id="input-cargo" maxlength="40" required>
+        </div>
+        <div class="control descricao-cargo">
+          <label class="label" for="input-description-office">Descricao do cargo*</label>
+          <input class="input is-primary" data-validate-field="descriptionOffice" type="text" name="description" id="input-description-office" maxlength="500" required>
+        </div>
+        <div class="field date">
+          <label class="label" for="input-date">Data de Inicio*</label>
+          <input class="input is-primary" data-validate-field="date" type="date" name="date" id="input-date" required>
+        </div>
+        <div class="control">
+        <div class="control btn">
+          <button class="button is-success btn btn-primary submit-button" type="submit" id="button-submit">Enviar</button>
+          <button class="button is-danger" type="button" id="button-clear">Limpar</button>
+        </div>
+      </div>
+    </form>
+    <div id="resultado-final"></div>
+    <hr class="mt-2 mb-0">
+    <footer class="footer">
+      <div class="content has-text-centered">
+      <p>Osvaldo Borges Campos Neto</p>
+      </div>
+    </footer>
+  </main>
+  <script src="just-validate/dist/js/just-validate.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
