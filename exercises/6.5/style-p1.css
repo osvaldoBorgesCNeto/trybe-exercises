@@ -26,11 +26,13 @@ body, html {
 }
 
 .coluna {
+  display: flex;
+  align-items: center;
   background: #999;
   justify-content: center;
   text-align: center;
   width: 50%;
-  height: 30%;
+  height: 100px;
 }
 
 @media screen and (min-width: 320px) and (max-width: 568px) {
@@ -43,6 +45,7 @@ body, html {
   .main{
     flex-direction: column;
     justify-content: flex-start;
+    align-items: center;
   }
   .coluna {
     margin: 5px 0 0 0;
