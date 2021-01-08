@@ -1,13 +1,9 @@
-body {
-  margin: 0 10px;
+* {
+  font-size: 17px;
 }
 
 h1 {
-  font-size: large;
-}
-
-h2 {
-  font-size: medium;
+  font-size: 30px;
 }
 
 img {
@@ -15,5 +11,36 @@ img {
 }
 
 figure {
-  margin: 25px 0;
+  margin: 0;
+  margin: 10px;
+}
+
+@media screen and (min-width: 960px) {
+  * {
+    font-size: 20px;
+  }
+
+  body {
+    background: crimson;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  .figures {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  * {
+    font-size: 25px;
+  }
+
+  body {
+    background: green;
+    max-width: max-content;
+  }
 }
