@@ -1,0 +1,94 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+header h1 {
+  padding: 1px;
+  text-align: center;
+}
+
+.asides {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.asides .aside-one h2 {
+  margin-top: 10px;
+  text-align: center;
+}
+
+@media screen and (max-width: 440px) {
+  header {
+    background: coral;
+  }
+
+  header h1 {
+    font-size: 30px;
+    padding: 1px;
+  }
+
+  header .nav-title {
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    border-top: 3px solid lawngreen;
+    border-bottom: 3px solid lawngreen;
+    background-color: lightskyblue;
+  }
+}
+
+@media screen and (max-width: 1000px) and (min-width: 421px) {
+  header {
+    background: springgreen;
+  }
+
+  header h1 {
+    font-size: 40px;
+    padding: 1px;
+  }
+
+  header .nav-title {
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    border-top: 3px solid red;
+    border-bottom: 3px solid red;
+    background-color: orchid;
+  }
+}
+
+@media screen and (min-width: 1001px) {
+  header {
+    background: chocolate;
+  }
+
+  header h1 {
+    font-size: 50px;
+    padding: 1px;
+  }
+
+  header .nav-title {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: baseline;
+    border-top: 3px solid blue;
+    border-bottom: 3px solid blue;
+    background-color: yellow;
+  }
+}
