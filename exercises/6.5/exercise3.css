@@ -81,6 +81,47 @@
   height: 1%;
 }
 
+@media screen and (max-width: 240px) {
+	#container {
+		display: flex;
+		flex-direction: column;
+		font-size: small;
+	}
+
+	#header {
+		font-size: 12px;
+		margin-bottom: 5px;
+		padding: 10px;
+		width: 91%;
+	}
+
+	#navigation ul {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		float: none;
+	}
+
+	#navigation ul li a {
+		border-right: none;
+	}
+
+	#content {
+		clear: left;
+		float: none;
+		width: 100%;
+	}
+
+	img {
+		width: 100%;
+	}
+	
+	#aside {
+		margin: 0;
+		width: 100%;
+	}
+}
+
 @media print {
 	#header {
 		display: none;
