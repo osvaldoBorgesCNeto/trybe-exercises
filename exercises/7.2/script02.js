@@ -169,7 +169,7 @@ console.log(checkObject(lesson3, 'materia', 'Matemática'));
 console.log('Bonus 01');
 
 const sumMat = object => {
-  const keys = Object.keys(allLessons);
+  const keys = Object.keys(object);
   let sum = 0;
 
   for (let index in keys) {
@@ -185,3 +185,25 @@ console.log(sumMat(allLessons));
 // BONUS 02
 console.log('Bonus 02');
 
+const info = (object, name) => {
+  let sumStudent = 0;
+  const keys = Object.keys(object);
+  let aulas = [];
+  for (let index in keys) {
+    if (object[keys[index]].professor === name) {
+      sumStudent += Object.values(object)[index].numeroEstudantes;
+      aulas.push(Object.values(object)[index].materia);
+    }
+  }
+  return {aulas: aulas, estudantes: sumStudent};
+}
+
+const infoObject = (object, name) => {
+  const infoFinal = {};
+  infoFinal.professor = name;
+  Object.assign(infoFinal, info(object, name));
+
+  return infoFinal;
+}
+
+console.log(infoObject(allLessons, 'Maria Clara'));
