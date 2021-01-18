@@ -13,6 +13,6 @@ console.log(verifyEven(14));
 
 // PARTe 02
 
-const isEven = numbers.find((number) => number % 2 === 0);
+const isEven02 = numbers.find((number) => number % 2 === 0);
 
-console.log(isEven);
+console.log(isEven02);
