@@ -1,3 +1,4 @@
+// Crie uma string com os nomes de todas as pessoas autoras.
 
 const assert = require('assert');
 

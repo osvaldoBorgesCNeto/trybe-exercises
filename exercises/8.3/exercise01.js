@@ -1,3 +1,5 @@
+// Dada uma matriz de matrizes, transforme em uma única matriz.
+
 const assert = require('assert');
 
 const arrays = [

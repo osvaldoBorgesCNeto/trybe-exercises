@@ -1,3 +1,5 @@
+// Calcule a média de idade que as pessoas autoras tinham quando seus respectivos livros foram lançados.
+
 const assert = require('assert');
 
 const books = [
