@@ -80,4 +80,5 @@ function formatedBookNames() {
   return result;
 }
 
+
 assert.deepStrictEqual(formatedBookNames(), expectedResult);
