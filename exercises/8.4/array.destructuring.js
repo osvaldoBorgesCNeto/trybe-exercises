@@ -14,7 +14,6 @@ console.log(fourthCountry);
 
 // PARTE 02
 
-const arrayCountries = ['Brazil', 'Japan', 'China', 'Canada'];
 const [ firstCountry, secondCountry, thirdCountry, fourthCountry ] = arrayCountries;
 
 console.log(firstCountry);
