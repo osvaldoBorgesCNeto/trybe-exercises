@@ -1,4 +1,4 @@
-// PARTE 01
+// NORMAL
 
 const arrayCountries = ['Brazil', 'Japan', 'China', 'Canada'];
 
@@ -12,7 +12,7 @@ console.log(secondCountry);
 console.log(thirdCountry);
 console.log(fourthCountry);
 
-// PARTE 02
+// DESTRUCTURING
 
 const [ firstCountry, secondCountry, thirdCountry, fourthCountry ] = arrayCountries;
 

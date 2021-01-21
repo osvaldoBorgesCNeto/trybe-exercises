@@ -17,14 +17,12 @@
 
 // PRATIC
 
-const nationality = ({ firstName, nationality }) => `${firstName} is ${nationality}`
+const nationality = ({ firstName, nationality = 'Brazilian' }) => `${firstName} is ${nationality}`
 
 const person = {
     firstName: "João",
     lastName: "Jr II"
 };
-
-person.nationality = 'Brazilian';
 
 const otherPerson = {
     firstName: "Ivan",
