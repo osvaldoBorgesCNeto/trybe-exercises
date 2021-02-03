@@ -1,7 +1,6 @@
-const { test } = require('@jest/globals');
-const sum = require('./sum');
+const sum = require('../functions/sum');
 
-describe('Parte 01', () => {
+describe('Sum', () => {
   test('sums two values', () => {
     expect(sum(4, 5)).toEqual(9);
   });
@@ -17,8 +16,4 @@ describe('Parte 01', () => {
   test('sums two values', () => {
     expect(() => { sum(4, '5') }).toThrowError(new Error('parameters must be numbers'));
   });
-})
-
-describe('Parte 02', () => {
-  
 })
