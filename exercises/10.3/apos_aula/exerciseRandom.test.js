@@ -1,4 +1,6 @@
 const randomNumber = require('./exercise01');
+const exercise04 = require('./exercise05');
+jest.mock('./exercise05');
 
 describe('Desafio 01', () => {
   test('Desafio 01', () => {
@@ -41,25 +43,39 @@ describe('Desafio 03', () => {
 
 describe('Desafio 04', () => {
   test('first', () => {
-    const randomNumberMock = jest.fn(randomNumber)
-    .mockImplementation(a => a.toUpperCase())
-    expect(randomNumberMock('osvaldo')).toBe('OSVALDO');  
-    expect(randomNumberMock).toHaveBeenCalledTimes(1);
+    exercise04.firstFunct.mockImplementation(a => a.toLowerCase());
+
+    expect(exercise04.firstFunct('OSVALDO')).toBe('osvaldo');
+    expect(exercise04.firstFunct).toHaveBeenCalledTimes(1);
   })
   
   test('second', () => {
-    const randomNumberMock = jest.fn(randomNumber)
-    .mockImplementation(a => a.substr(0, 1))
+    exercise04.secondFunct.mockImplementation(a => a.substr(0, 1));
 
-    expect(randomNumberMock('osvaldo')).toBe('o');
-    expect(randomNumberMock).toHaveBeenCalledTimes(1);
+    expect(exercise04.secondFunct('osvaldo')).toBe('o');
+    expect(exercise04.secondFunct).toHaveBeenCalledTimes(1);
   })
 
   test('third', () => {
-    const randomNumberMock = jest.fn(randomNumber)
-    .mockImplementation((a, b) => a.concat(b));  
+    exercise04.thirdFunct.mockImplementation((a, b, c) => a.concat(b, c));
 
-    expect(randomNumberMock('osvaldo', 'Borges')).toBe('osvaldoBorges');
-    expect(randomNumberMock).toHaveBeenCalledTimes(1);
+    expect(exercise04.thirdFunct('osvaldo', 'Borges', 'Campos')).toBe('osvaldoBorgesCampos');
+    expect(exercise04.thirdFunct).toHaveBeenCalledTimes(1);
+  })
+})
+
+describe('Desafio 05', () => {
+  test('repita a implementacao', () => {
+    const firstMock = jest
+      .spyOn(exercise04, "firstFunct")
+      .mockImplementation(a => a.toLowerCase());
+
+    expect(firstMock('OSVALDO')).toBe('osvaldo');
+    expect(firstMock).toHaveBeenCalledTimes(2);
+
+    firstMock.mockRestore();
+    exercise04.firstFunct.mockImplementation(a => a.toUpperCase());
+
+    expect(exercise04.firstFunct('osvaldo')).toBe('OSVALDO');
   })
 })
