@@ -2,7 +2,6 @@ const { test } = require('@jest/globals');
 const { describe } = require('yargs');
 const uppercase = require('./exercise01');
 const getUserName = require('./exercise02_03');
-// const getRepos = require('./exercise04');
 
 describe('Exercicio 01', () => {
   test('transforma as letras de uma palavra em letras maiúsculas', () =>{
@@ -42,13 +41,3 @@ describe('Exercicio 03', () => {
     return await expect(getUserName(id)).rejects.toEqual({ error: `User with ${id} not found.` });
   })
 })
-
-// describe('Exercicio 04', () => {
-//   test('retorna uma lista como resultado do Usario do GitHub', async () => {
-//     const url = 'https://api.github.com/orgs/tryber/repos';
-
-//     expect.assertions(2);
-//       await expect(getRepos(url).resolves).toContain('sd-01-week4-5-project-todo-list');
-//       await expect(getRepos(url).resolves).toContain('sd-01-week4-5-project-meme-generator');
-//   })
-// })
