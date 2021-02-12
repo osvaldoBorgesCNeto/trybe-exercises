@@ -1,14 +1,17 @@
-import './App.css';
 import React from 'react';
-import AlbumRender from './components/AlbumRender';
-import UserRender from './components/UserRender';
-import OrderRender from './components/OrderRender';
-import Shopping from './components/ShoppingList';
+
+import AlbumRender from './components_antes/AlbumRender';
+import UserRender from './components_antes/UserRender';
+import OrderRender from './components_antes/OrderRender';
+import Shopping from './components_antes/ShoppingList';
+
+import PokedexRender from './components_depois/PokedexRender';
+
 
 class App extends React.Component {
   render() {
     return (
-     <Shopping />
+     <PokedexRender />
     );
   }
 }
