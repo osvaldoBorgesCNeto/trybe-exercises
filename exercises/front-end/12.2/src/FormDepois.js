@@ -1,5 +1,7 @@
 import React from 'react';
-import PersonalData from './FormDepois/PersonalData'
+import LastWorkData from './FormDepois/LastWork';
+import PersonalData from './FormDepois/PersonalData';
+import FinalForm from './FormDepois/FinalForm';
 
 class FormDepois extends React.Component {
   constructor(props) {
@@ -12,12 +14,17 @@ class FormDepois extends React.Component {
       city: '',
       state: '',
       type: '',
-      formWithErro: false,
+      curriculum: '',
+      office: '',
+      jobDescription: '',
+      alert: 0,
+      submitted: false,
     }
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.onBlurHandler = this.onBlurHandler.bind(this);
+    this.handleEnter = this.handleEnter.bind(this);
   }
 
   handleChange({ target }) {
@@ -39,17 +46,29 @@ class FormDepois extends React.Component {
     this.setState( { [name]: value });
   }
 
+  handleEnter() {
+    if (this.state.alert === 0) {
+      alert('Preencha com cuidado esta informação.')
+      this.setState( { alert: 1 });
+    };
+  }
+
   handleSubmit(event) {
     alert('Formulario concluido com sucesso!!!');
     event.preventDefault();
+    this.setState({ submitted: true })
   }
+
+
 
   render() {
     return (
       <div>
-        <form className='form' onSubmit={this.handleSubmit}>
+        <form className='form' onSubmit={ this.handleSubmit }>
           <PersonalData handleChange={ this.handleChange } onBlurHandler={ this.onBlurHandler } state={ this.state }/>
-          <input type='submit' value='Enviar'/>
+          <LastWorkData handleChange={ this.handleChange } handleEnter={ this.handleEnter }/>
+          { this.state.submitted && <FinalForm state={ this.state } /> }
+          <input type='submit' value='Send' onClick={ this.sendForm }/>
         </form>
       </div>
     );

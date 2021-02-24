@@ -36,7 +36,7 @@ class PersonalData extends React.Component {
           <label>
             State
             <select name='state' onChange={ handleChange } required>
-              <option>asdga</option>
+              <option>Test</option>
             </select>
           </label>
 
