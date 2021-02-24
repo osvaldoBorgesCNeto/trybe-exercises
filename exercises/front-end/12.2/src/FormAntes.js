@@ -1,8 +1,8 @@
 import React from 'react';
 import './Form.css';
-import AgeForm from './Form/AgeForm';
-import NameForm from './Form/NameForm';
-import FruitsForm from './Form/FruitsForm';
+import AgeForm from './FormAntes/AgeForm';
+import NameForm from './FormAntes/NameForm';
+import FruitsForm from './FormAntes/FruitsForm';
 
 class Form extends React.Component {
   constructor(props) {

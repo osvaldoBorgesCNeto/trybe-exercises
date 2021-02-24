@@ -1,12 +1,11 @@
 import React from 'react'
-import Form from './Form'
-import './App.css';
+import FormDepois from './FormDepois';
 
 class App extends React.Component {
-  render () {
+  render() {
     return (
       <div>
-        <Form />
+        <FormDepois />
       </div>
     );
   }
