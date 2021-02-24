@@ -25,6 +25,7 @@ class FormDepois extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.onBlurHandler = this.onBlurHandler.bind(this);
     this.handleEnter = this.handleEnter.bind(this);
+    this.clearState = this.clearState.bind(this);
   }
 
   handleChange({ target }) {
@@ -59,16 +60,32 @@ class FormDepois extends React.Component {
     this.setState({ submitted: true })
   }
 
-
+  clearState() {
+    this.setState( {
+      name: '',
+      email: '',
+      CPF: '',
+      address: '',
+      city: '',
+      state: '',
+      type: '',
+      curriculum: '',
+      office: '',
+      jobDescription: '',
+      alert: 0,
+      submitted: false,
+    })
+  }
 
   render() {
     return (
       <div>
         <form className='form' onSubmit={ this.handleSubmit }>
           <PersonalData handleChange={ this.handleChange } onBlurHandler={ this.onBlurHandler } state={ this.state }/>
-          <LastWorkData handleChange={ this.handleChange } handleEnter={ this.handleEnter }/>
+          <LastWorkData handleChange={ this.handleChange } handleEnter={ this.handleEnter } state={ this.state }/>
           { this.state.submitted && <FinalForm state={ this.state } /> }
-          <input type='submit' value='Send' onClick={ this.sendForm }/>
+          <input type='submit' value='Send'/>
+          <input type='button' value='Clear' onClick={ this.clearState }/>
         </form>
       </div>
     );

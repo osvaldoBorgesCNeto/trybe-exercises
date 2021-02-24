@@ -10,22 +10,22 @@ class PersonalData extends React.Component {
           <legend>Personal Data</legend>
           <label>
             Name:
-            <input type='text' name='name' onChange={ handleChange } maxLength='40' required/>
+            <input type='text' name='name' value={ state.name } onChange={ handleChange } maxLength='40' required/>
           </label>
 
           <label>
             Email:
-            <input type='text' name='email' onChange={ handleChange } maxLength='50' required/>
+            <input type='text' name='email' value={ state.email } onChange={ handleChange } maxLength='50' required/>
           </label>
 
           <label>
             CPF:
-            <input type='text' name='CPF' onChange={ handleChange } maxLength='11' required/>
+            <input type='text' name='CPF' value={ state.CPF } onChange={ handleChange } maxLength='11' required/>
           </label>
 
           <label>
             Address
-            <input type='text' name='address' onChange={ handleChange } maxLength='200' required/>
+            <input type='text' name='address' value={ state.address } onChange={ handleChange } maxLength='200' required/>
           </label>
 
           <label>
@@ -35,7 +35,7 @@ class PersonalData extends React.Component {
 
           <label>
             State
-            <select name='state' onChange={ handleChange } required>
+            <select name='state' value={ state.state } onChange={ handleChange } required>
               <option>Test</option>
             </select>
           </label>
@@ -43,12 +43,12 @@ class PersonalData extends React.Component {
           <label>
             Type:
             <label>
-              <input type='radio' id='house' name='type' value='house' onChange={ handleChange } required/>
+              <input type='radio' id='house' name='type' value={ state.type } onChange={ handleChange } required/>
               House
             </label>
 
             <label>
-              <input type='radio' id='apartment' name='type' value='apartment' onChange={ handleChange }/>
+              <input type='radio' id='apartment' name='type' value={ state.type } onChange={ handleChange }/>
               Apartment
             </label>
             
