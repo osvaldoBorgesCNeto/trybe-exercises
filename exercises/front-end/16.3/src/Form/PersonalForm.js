@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import changeHandlerAction from '../actions/handleChangeAction';
+import formErrorAction from '../actions/formErrorAction';
 
 const states = ['Rio de Janeiro', 'Minas Gerais', 'Amapá', 'Amazonas', 'São Paulo', 'Ceará', 'Distrito Federal'];
 
 class PersonalForm extends Component {
   render() {
-    const { changeHandler } = this.props;
+    const { changeHandler, formError } = this.props;
     return (
       <fieldset>
             <legend>Dados pessoais</legend>
@@ -17,7 +18,8 @@ class PersonalForm extends Component {
                 name="name"
                 maxLength="40"
                 required
-                onChange={ (event) => changeHandler(event) }
+                onChange={ changeHandler }
+                onBlur={ formError }
               />
             </div>
             <div className="container">
@@ -27,7 +29,8 @@ class PersonalForm extends Component {
                 name="email"
                 maxLength="50"
                 required
-                onChange={ event => changeHandler(event) }
+                onChange={ changeHandler }
+                onBlur={ formError }
               />
             </div>
             <div className="container">
@@ -37,7 +40,8 @@ class PersonalForm extends Component {
                 name="cpf"
                 maxLength="11"
                 required
-                onChange={ event => changeHandler(event) }
+                onChange={ changeHandler }
+                onBlur={ formError }
               />
             </div>
             <div className="container">
@@ -47,7 +51,8 @@ class PersonalForm extends Component {
                 name="address"
                 maxLength="200"
                 required
-                onChange={ event => changeHandler(event) }
+                onChange={ changeHandler }
+                onBlur={ formError }
               />
             </div>
             <div className="container">
@@ -57,7 +62,8 @@ class PersonalForm extends Component {
                 name="city"
                 maxLength="28"
                 required
-                onChange={ event => changeHandler(event) }
+                onChange={ changeHandler }
+                onBlur={ formError }
               />
             </div>
             <div className="container">
@@ -65,7 +71,8 @@ class PersonalForm extends Component {
               <select
                 name="countryState"
                 required
-                onChange={ event => changeHandler(event) }
+                onChange={ changeHandler }
+                onBlur={ formError }
                 defaultValue=""
               >
                 <option value="">Selecione</option>
@@ -83,7 +90,8 @@ class PersonalForm extends Component {
                   id="house"
                   name="addressType"
                   value="house"
-                  onChange={ event => changeHandler(event) }
+                  onChange={ changeHandler }
+                  onBlur={ formError }
                 />
                 Casa
               </label>
@@ -93,7 +101,8 @@ class PersonalForm extends Component {
                   id="apart"
                   name="addressType"
                   value="apartment"
-                  onChange={ event => changeHandler(event)}
+                  onChange={ changeHandler }
+                  onBlur={ formError }
                 />
                 Apartamento
               </label>
@@ -105,6 +114,7 @@ class PersonalForm extends Component {
 
 const mapDispatchToProps = (dispatch) => ({
   changeHandler: (event) => dispatch(changeHandlerAction(event)),
+  formError: (event) => dispatch(formErrorAction(event)),
 });
 
 export default  connect(null, mapDispatchToProps)(PersonalForm);

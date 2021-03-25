@@ -6,31 +6,16 @@ import FormDataDisplay from './Form/FormDataDisplay';
 import { connect } from 'react-redux';
 
 class App extends Component {
-  handleSubmit = event => {
-    event.preventDefault();
-  }
-
-  validateField(fieldName, value) {
-    switch (fieldName) {
-      case 'email':
-        const isValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2})$/i)
-        return isValid ? '' : ' is invalid';
-      default:
-        break;
-    }
-    return '';
-  }
-
   render() {
-    const { submitted, formError } = this.props;
+    const { submitted } = this.props;
 
     return (
       <main>
         <Form />
         <div className="container">
-          <FormError formError={formError} />
+          <FormError />
         </div>
-        { submitted && <FormDataDisplay currentState={ this.state } /> }
+        { submitted && <FormDataDisplay /> }
       </main>
     );
   }
@@ -38,7 +23,6 @@ class App extends Component {
 
 const mapStateToProps = (state) => ({
   submitted: state.formReducer.submitted,
-  formError: state.formReducer.formError,
 });
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, null)(App);

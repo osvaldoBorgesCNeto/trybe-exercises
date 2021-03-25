@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class FormError extends Component {
   render() {
@@ -20,4 +21,8 @@ class FormError extends Component {
   }
 }
 
-export default FormError;
+const mapStateToProps = (state) => ({
+  formError: state.formReducer.formError,
+})
+
+export default connect(mapStateToProps, null)(FormError);

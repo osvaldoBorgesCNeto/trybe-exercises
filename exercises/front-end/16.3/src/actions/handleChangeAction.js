@@ -1,4 +1,4 @@
-export const HANDLECHANGE = "HANDLECHANGE";
+export const HANDLECHANGE_ACTION = "HANDLECHANGE";
 
 const validateAddress = address => address.replace(/[^\w\s]/gi, '')
 
@@ -10,7 +10,7 @@ const changeHandler = event => {
   if (name === 'city') value = value.match(/^\d/) ? '' : value;
 
   return ({
-    type: HANDLECHANGE,
+    type: HANDLECHANGE_ACTION,
     name,
     value,
   })
