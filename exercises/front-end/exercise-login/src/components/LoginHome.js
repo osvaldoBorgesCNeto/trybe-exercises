@@ -11,11 +11,11 @@ class LoginHome extends React.Component {
       <div>
         <div>
           <label htmlFor="email">
-          Email
+          Email:
             <input type="text" name="email" id="email" onChange={ changeHandle } required />
           </label>
           <label htmlFor="password">
-          Password
+          Password:
             <input type="password" name="password" id="password" onChange={ changeHandle } required />
           </label>
           <Link to="/client" onClick={ () => clientValid({email, password}) }><button>Enter</button></Link>
