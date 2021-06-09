@@ -3,7 +3,7 @@ use('bankExercise');
 db.movies.find(
   {
     "description": {
-      $regex: /humanity/,
+      $regex: /humanity.$/,
     },
   },
   {},
