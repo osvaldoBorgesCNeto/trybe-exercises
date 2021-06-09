@@ -1,0 +1,5 @@
+use('bankExercise');
+
+db.class.updateOne({'title': 'Home Alone'}, {$set: {'budget': 1, 'imdbRating': 7.7}});
+
+db.class.find();

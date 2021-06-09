@@ -1,0 +1,5 @@
+use('bankExercise');
+
+db.class.updateOne({'title': 'Batman'}, {$rename: {'budget': 'estimatedBudget'}});
+
+db.class.find();

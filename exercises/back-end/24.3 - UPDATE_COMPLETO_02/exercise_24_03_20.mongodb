@@ -1,0 +1,3 @@
+use('bankExercise');
+
+db.movies.createIndex({ "description": "text" });

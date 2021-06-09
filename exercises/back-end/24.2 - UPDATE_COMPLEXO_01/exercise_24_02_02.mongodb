@@ -1,0 +1,15 @@
+use('bankExercise');
+
+db.movies.updateOne(
+  {'title': 'Batman'},
+  {
+    $push: {
+      category: {
+        $each: ["villain", "comic-based"],
+      },
+    },
+  },
+);
+
+use('bankExercise');
+db.movies.find();

@@ -1,0 +1,6 @@
+use('bankExercise');
+
+db.movies.find(
+  { "category": { $all: [ "action", "adventure" ] } },
+  {}
+);

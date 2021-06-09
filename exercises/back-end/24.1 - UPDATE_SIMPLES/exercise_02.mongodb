@@ -1,0 +1,5 @@
+use('bankExercise');
+
+db.class.updateOne({'title': 'Godzilla'}, {$set: {'budget': 1}})
+
+db.class.find();

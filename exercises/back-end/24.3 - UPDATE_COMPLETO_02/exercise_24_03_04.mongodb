@@ -1,0 +1,6 @@
+use('bankExercise');
+
+db.movies.updateOne(
+  { "title": "Godzilla" },
+  {$push: { rating: { $each: [ 78, 52, 95, 102] }}}
+);

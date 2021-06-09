@@ -1,0 +1,8 @@
+use('bankExercise');
+
+db.class.updateMany(
+  {'title': {$in: ['Batman', 'Home Alone'] } },
+  {$max: {'imdbRating': 17} },
+);
+
+db.class.find();

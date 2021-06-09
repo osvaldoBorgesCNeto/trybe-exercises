@@ -1,0 +1,5 @@
+use('bankExercise');
+
+db.class.updateOne({}, {$unset: {'budget': "", 'estimatedBudget': ""} });
+
+db.class.find();
