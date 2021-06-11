@@ -12,7 +12,7 @@ db.movies.find(
       ],
     },
     "imdbRating": {
-      $lt: 7,
+      $gte: 7,
     }
   },
   {},

@@ -1,0 +1,46 @@
+use('erp');
+
+db.vendas.aggregate([
+  {
+    $match: {
+      dataVenda: {
+        $gte: ISODate("2020-01-01"),
+        $lte: ISODate("2020-12-31"),
+      },
+    },
+  },
+  {
+    $lookup: {
+      from: "clientes",
+      localField: "clienteId",
+      foreignField: "clienteId",
+      as: "client_new",
+    },
+  },
+  {
+    $unwind: "$client_new",
+  },
+  {
+    $group: {
+      _id: "$client_new.endereco.uf",
+      total: {
+        $sum: 1,
+      },
+    },
+  },
+  {
+    $sort: {
+      total: -1,
+    },
+  },
+  {
+    $limit: 3,
+  },
+  {
+    $project: {
+      _id: 0,
+      totalVendas: "$total",
+      uf: "$_id",
+    },
+  },
+]);
