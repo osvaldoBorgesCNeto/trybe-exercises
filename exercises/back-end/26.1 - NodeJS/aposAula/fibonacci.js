@@ -11,6 +11,7 @@ const calculoFibonacci = () => {
   }
 
   let n1 = 1, n2 = 1, nextTerm;
+  
   console.log("---------");
   console.log(`Fibonacci de ${numeroEscolhido}: `);
 
