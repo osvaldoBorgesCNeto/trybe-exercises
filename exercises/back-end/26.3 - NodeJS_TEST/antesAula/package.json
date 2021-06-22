@@ -1,0 +1,19 @@
+{
+  "name": "test_mocha",
+  "version": "1.0.0",
+  "description": "Primeiro Test",
+  "main": "index.js",
+  "dependencies": {
+    "chai": "^4.3.4",
+    "sinon": "^11.1.1"
+  },
+  "devDependencies": {
+    "mocha": "^9.0.1"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "mocha tests"
+  },
+  "author": "",
+  "license": "ISC"
+}
