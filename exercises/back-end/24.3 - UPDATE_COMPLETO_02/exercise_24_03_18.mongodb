@@ -1,0 +1,10 @@
+use('bankExercise');
+
+db.movies.find(
+  {
+    "description": {
+      $regex: /^The/,
+    },
+  },
+  {},
+);

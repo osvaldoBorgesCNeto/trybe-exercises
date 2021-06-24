@@ -1,0 +1,22 @@
+use('agg_example');
+
+db.clients.aggregate([
+  {
+    $lookup: {
+      from: "transactions",
+      let: {
+        name: "$name"
+      },
+      pipeline: [
+        {
+          $match: {
+            $expr: {
+              $eq: ["$from", "$$name"],
+            },
+          },
+        },
+      ],
+      as: 'new_clients'
+    }
+  }
+]);

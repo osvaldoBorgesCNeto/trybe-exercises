@@ -1,0 +1,13 @@
+use('storage');
+
+db.products.aggregate([
+  {
+    $project: {
+      _id: 0,
+      name: 1,
+      Lucro: {
+        $round: [ "$sale_price", 1 ],
+      },
+    },
+  },
+]);

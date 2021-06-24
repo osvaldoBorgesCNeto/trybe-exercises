@@ -1,0 +1,5 @@
+use('bankExercise');
+
+db.class.updateMany({}, {$set: {'sequels': 0} });
+
+db.class.find();

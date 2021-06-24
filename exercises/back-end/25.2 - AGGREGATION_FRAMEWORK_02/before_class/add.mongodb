@@ -1,0 +1,16 @@
+use('storage');
+
+db.products.aggregate([
+  {
+    $project: {
+      _id: 0,
+      name: 1,
+      valorTotal: {
+        $add: [
+          "$purchase_price",
+          "$taxes", 
+        ],
+      },
+    },
+  },
+]);

@@ -1,0 +1,15 @@
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.pokemon-card {
+  display: flex;
+  border: 1px solid black;
+  justify-content: center;
+  min-width: 20rem;
+}
+

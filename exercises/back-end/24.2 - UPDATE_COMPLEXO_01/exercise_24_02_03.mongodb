@@ -1,0 +1,13 @@
+use('bankExercise');
+
+db.movies.updateOne(
+  {'title': 'Batman'},
+  {
+    $pull: {
+      category: "action",
+    },
+  },
+);
+
+use('bankExercise');
+db.movies.find();

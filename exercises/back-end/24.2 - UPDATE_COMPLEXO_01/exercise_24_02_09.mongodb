@@ -1,0 +1,16 @@
+use('bankExercise');
+
+db.movies.updateOne(
+  {
+    "title": "Home Alone",
+    "cast.actor": "Daniel Stern",
+  },
+  {
+    $set: {
+      "cast.$.character": "Marv",
+    },    
+  },
+);
+
+use('bankExercise');
+db.movies.find();

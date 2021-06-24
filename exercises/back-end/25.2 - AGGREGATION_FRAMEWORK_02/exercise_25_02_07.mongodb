@@ -1,0 +1,43 @@
+use('erp');
+
+db.vendas.aggregate([
+  {
+    $unwind: "$itens",
+  },
+  {
+    $match: {
+      "itens.nome": "QUEIJO PRATO",
+    },
+  },
+  {
+    $group: {
+      _id: "$clienteId",
+      total: { $sum: "$itens.quantidade" },
+    },
+  },
+  {
+    $lookup: {
+      from: "clientes",
+      localField: "_id",
+      foreignField: "clienteId",
+      as: "cliente",
+    },
+  },
+  {
+    $unwind: "$cliente",
+  },
+  {
+    $sort: { "total": -1 },
+  },
+  {
+    $project: {
+      _id: 0,
+      nomeCliente: "$cliente.nome",
+      uf: "$cliente.endereco.uf",
+      totalConsumido: "$total",
+    },
+  },
+  {
+    $limit: 1,
+  },
+]);

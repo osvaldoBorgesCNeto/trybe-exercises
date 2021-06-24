@@ -1,0 +1,46 @@
+* {
+  font-size: 17px;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+img {
+  max-width: 100%;
+}
+
+figure {
+  margin: 0;
+  margin: 10px;
+}
+
+@media screen and (min-width: 960px) {
+  * {
+    font-size: 20px;
+  }
+
+  body {
+    background: crimson;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  .figures {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  * {
+    font-size: 25px;
+  }
+
+  body {
+    background: green;
+    max-width: max-content;
+  }
+}

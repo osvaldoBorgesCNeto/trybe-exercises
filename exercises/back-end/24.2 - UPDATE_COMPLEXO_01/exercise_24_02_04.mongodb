@@ -1,0 +1,13 @@
+use('bankExercise');
+
+db.movies.updateOne(
+  {'title': 'Batman'},
+  {
+    $pop: {
+      category: -1,
+    },
+  },
+);
+
+use('bankExercise');
+db.movies.find();

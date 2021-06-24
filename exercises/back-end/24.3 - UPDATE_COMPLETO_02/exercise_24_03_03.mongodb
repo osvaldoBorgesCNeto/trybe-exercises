@@ -1,0 +1,6 @@
+use('bankExercise');
+
+db.movies.updateOne(
+  { "title": "Batman" },
+  {$push: { rating: { $each: [ 85, 100, 102, 105] }}}
+);

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de Curriculo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Formulario de Curriculo</h1>
+  </header>
+  <main>
+    <form action="" method="GET">
+      <fieldset class="dados-pessoais">
+        <legend>Dados Pessoais</legend>
+        <section class="input-name">
+          <label for="input-name">Nome</label>
+          <input type="text" name="name" id="input-name" maxlength="40" required>
+        </section>
+        <br>
+        <section class="input-email">
+          <label for="input-email">E-mail</label>
+          <input type="text" name="email" id="input-email" maxlength="50" required>
+        </section>
+        <br>
+        <section class="input-cpf">
+          <label for="input-cpf">CPF</label>
+          <input type="text" name="cpf" id="input-cpf" maxlength="11" required>
+        </section>
+        <br>
+        <section class="input-end">
+          <label for="input-end">Endereco</label>
+          <input type="text" name="end" id="input-end" maxlength="200" required>
+        </section>
+        <br>
+        <section class="input-city">
+          <label for="input-city">Cidade</label>
+          <input type="text" name="cidade" id="input-city" maxlength="28" required>
+        </section>
+        <br>
+        <section class="input-estado">
+          <label for="input-estado">Estado</label>
+          <select name="estado" id="input-estado" value="" required>
+          </select>
+        </section>
+        <br>
+        <fieldset class="input-tipo">
+          <legend>Tipo</legend>
+          <input type="radio" name="tipo" id="casa" value="casa" required>
+          <label for="casa">Casa</label>
+          <input type="radio" name="tipo" id="ap" value="ap" required>
+          <label for="ap">Apartamento</label>
+        </fieldset>
+      </fieldset>
+      <br>
+      <fieldset class="ultimo-emprego">
+        <legend>Dados do ultimo emprego</legend>
+        <section class="input-resumo">
+          <label for="input-resumo">Resumo do ultimo emprego</label>
+          <br>
+          <textarea name="resumo" id="input-resumo" cols="80" rows="10" maxlength="1000" required></textarea>
+        </section>
+        <br>
+        <section class="input-cargo">
+          <label for="input-cargo">Cargo</label>
+          <input type="text" name="cargo" id="input-cargo" maxlength="40" required>
+        </section>
+        <br>
+        <section class="input-descricao-cargo">
+          <label for="input-descricao-cargo">Descricao do cargo</label>
+          <input type="text" name="descricao" id="input-descricao-cargo" maxlength="500" required>
+        </section>
+        <br>
+        <section class="input-date">
+          <label for="input-date">Data de Inicio</label>
+          <input type="date" name="date" id="input-date" required>
+        </section>
+      </fieldset>
+      <br>
+      <button type="button" id="button-submit">Enviar</button>
+      <button type="button" id="button-clear">Limpar</button>
+    </form>
+    <div id="resultado-final"></div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
